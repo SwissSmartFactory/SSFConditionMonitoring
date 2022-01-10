@@ -54,10 +54,10 @@ jobs:
     - name: Import solution as unmanaged to build env
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
-        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
+        environment-url: ${{secrets.BuilEnvironmentUrl}}
+        app-id: ${{secrets.ClientID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.TENANT_ID}}
+        tenant-id: ${{secrets.TentantID}}
         solution-file: ${{ github.event.inputs.solution_outbound_folder}}/${{ github.event.inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
@@ -65,10 +65,10 @@ jobs:
     - name: Export solution as managed
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
-        environment-url: ${{env.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
+        environment-url: ${{secrets.BuilEnvironmentUrl}}
+        app-id: ${{secrets.ClientID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.TENANT_ID}}
+        tenant-id: ${{secrets.TentantID}}
         solution-name: ${{ github.event.inputs.solution_name }}
         managed: true
         solution-output-file: ${{ github.event.inputs.solution_shipping_folder}}/${{ github.event.inputs.solution_name }}.zip
@@ -98,10 +98,10 @@ jobs:
     - name: Import solution to prod env
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
-        environment-url: ${{env.PRODUCTION_ENVIRONMENT_URL}}
-        app-id: ${{env.CLIENT_ID}}
+        environment-url: ${{secrets.ProdEnvironmentUrl}}
+        app-id: ${{secrets.ClientID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{env.TENANT_ID}}
+        tenant-id: ${{secrets.TentantID}}
         solution-file: ${{ github.event.inputs.solution_release_folder}}/${{ github.event.inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
