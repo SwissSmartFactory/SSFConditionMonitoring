@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_ur_ssfhumidity" />
+  <EntityRelationship Name="business_unit_ur_ssftemp" />
+  <EntityRelationship Name="lk_ur_ssfhumidity_createdby" />
+  <EntityRelationship Name="lk_ur_ssfhumidity_modifiedby" />
+  <EntityRelationship Name="lk_ur_ssftemp_createdby" />
+  <EntityRelationship Name="lk_ur_ssftemp_modifiedby" />
+  <EntityRelationship Name="owner_ur_ssfhumidity" />
+  <EntityRelationship Name="owner_ur_ssftemp" />
+  <EntityRelationship Name="team_ur_ssfhumidity" />
+  <EntityRelationship Name="team_ur_ssftemp" />
+  <EntityRelationship Name="user_ur_ssfhumidity" />
+  <EntityRelationship Name="user_ur_ssftemp" />
+</EntityRelationships>
